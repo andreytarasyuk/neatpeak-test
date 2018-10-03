@@ -1,0 +1,49 @@
+{% set started = {
+	grid: [
+		{
+			classList: 'grid__col_50 grid__col_md-100',
+			title: '<strong>Download</strong> to get started',
+			label: 'This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.'
+		},
+		{
+			classList: 'grid__col_50 grid__col_md-100',
+			controls: [
+				{
+					classList: 'btn_orange',
+					text: 'Buy for $24'
+				},
+				{
+					text: 'Try It Free'
+				}
+			]
+		}
+	]
+} %}
+
+<!-- begin started -->
+<div class="started">
+	<div class="inner">
+		<div class="grid">
+			<div class="grid__row">
+				{% for item in started.grid %}
+					<div class="grid__col {{item.classList}}">
+						{% if item.title %}
+							<h2 class="title started__title">{{item.title | safe}}</h2>
+						{% endif %}
+						{% if item.label %}
+							<div class="started__label">{{item.label}}</div>
+						{% endif %}
+						{% if item.controls %}
+							<div class="started__controls">
+								{% for item in item.controls %}
+									<a href="#" class="btn btn_long {{item.classList}} started__control">{{item.text}}</a>
+								{% endfor %}
+							</div>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end started -->

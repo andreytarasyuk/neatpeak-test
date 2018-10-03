@@ -1,0 +1,89 @@
+{% set plan = {
+	info: {
+		title: '<strong>Choose</strong> your plan',
+		label: 'This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking.',
+		choice: {
+			label: 'Select the number of licenses:',
+			fieldOptions: {
+				classList: 'plan__field',
+				select: {
+					classList: 'field__select_sm',
+					placeholder: '1'
+				}
+			}
+		},
+		promo: {
+			label: 'Enter the promo code:',
+			fieldOptions: {
+				classList: 'promo-code__field',
+				input: {
+					placeholder: 'Promo code',
+					classList: 'promo-code__input field__input_sm'
+				},
+				btn: 'Apply',
+				btnClassList: 'btn_sm btn_blue promo-code__btn'
+			}
+		}
+	},
+	carts: [
+		{
+			classList: 'cart_simple',
+			title: 'Professional',
+			price: '10$',
+			list: [
+				'Hundreds of elements', 'Style guide', '160 icons included', 'Sketch files', 'Commercial licence'
+			],
+			btnClassList: 'btn_orange btn_block',
+			btn: 'buy now'
+		},
+		{
+			title: 'starter',
+			price: 'free',
+			list: [
+				'Hundreds of elements', 'Style guide', '30 icons included', 'Personal licence'
+			],
+			btnClassList: 'btn_green btn_block',
+			btn: 'Get Free'
+		}
+	]
+} %}
+
+<!-- begin plan -->
+<div class="plan">
+	<div class="inner plan__inner">
+		<div class="plan__info">
+			<h2 class="title title_lg plan__title">{{plan.info.title | safe}}</h2>
+			<p class="plan__label">{{plan.info.label}}</p>
+			<div class="plan__choice">
+				<span class="plan__choice-label">{{plan.info.choice.label}}</span>
+				{{field.call(plan.info.choice.fieldOptions)}}
+			</div>
+			<div class="promo-code">
+				<div class="promo-code__label">{{plan.info.promo.label}}</div>
+				{{field.call(plan.info.promo.fieldOptions)}}
+			</div>
+		</div>
+		<div class="plan__carts">
+			{% for item in plan.carts %}
+				<div class="cart {{item.classList}}">
+					<div class="cart__wrapper">
+						<div class="cart__title">{{item.title}}</div>
+						<div class="cart__price">{{item.price}}</div>
+						<ul class="cart__list">
+							{% for item in item.list %}
+								<li class="cart__list-item">
+									{{mixins.icon('check', 'cart__icon')}}
+									{{item}}
+								</li>
+							{% endfor %}
+						</ul>
+						<div class="cart__btn">
+							<button class="btn {{item.btnClassList}}">{{item.btn}}</button>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- end plan -->

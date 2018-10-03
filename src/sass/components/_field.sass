@@ -1,0 +1,66 @@
+.field
+	position: relative
+	&__input,
+	&__textarea
+		width: 100%
+		border: 1px solid $silver
+		border-radius: 6px
+		background: $pale-grey
+		color: $silver-two
+		+placeholder-color($silver-two)
+		font-family: 'Nunito Sans', sans-serif
+		+f(17px, 400, normal)
+		&::placeholder
+			opacity: 1
+	&__input
+		height: 50px
+		padding: 0 20px
+		&_sm
+			max-width: 206px
+			height: 40px
+			padding: 0 15px
+			background: $white
+			+f(14px, 400, normal)
+			color: $slate-grey
+			+placeholder-color($slate-grey)
+			border: none
+			box-shadow: 0 2px 6px 0 rgba($charcoal-grey, .08)
+	&__textarea
+		line-height: 30px
+		height: 140px
+		padding: 20px 30px
+		resize: vertical
+		+xs
+			padding: 20px
+	&__select
+		text-align: left
+		&_sm
+			min-width: 89px
+			+xs
+				min-width: 75px
+			.select2-dropdown
+				border: none
+			.select2-container--default
+				.select2-selection--multiple,
+				.select2-selection--single
+					box-shadow: 0 2px 6px 0 rgba($charcoal-grey, .08)
+					border-radius: 4px
+					border: none
+					background: $white
+					padding: 13px 0
+				.select2-selection__placeholder
+					color: $slate-grey
+				.select2-selection--single .select2-selection__arrow b
+					border-color: $slate-grey transparent transparent
+			.select2-container .select2-selection--single .select2-selection__rendered
+				padding-left: 15px
+				+f(14px, 600, 1)
+				color: $slate-grey
+			.select2-container--default.select2-container--open
+				.select2-selection--single .select2-selection__arrow b
+					border-color: transparent transparent $slate-grey
+			.select2-results__option
+				+f(14px, 600, 1)
+				padding: 13px 10px 13px 15px
+				color: $slate-grey
+

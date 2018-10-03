@@ -1,0 +1,32 @@
+body
+	min-width: 320px
+	background-color: $pale-grey
+	font-family: 'Nunito Sans', sans-serif
+	+f(16px, 400, 1.875)
+
+.inner
+	position: relative
+	max-width: 1200px
+	margin-left: auto
+	margin-right: auto
+	padding-left: 15px
+	padding-right: 15px
+	+clr
+	+lg
+		max-width: 970px
+	+md
+		max-width: 750px
+	+sm
+		max-width: 100%
+
+.title
+	color: $white
+	+f(35px, 300, 1.429)
+	letter-spacing: 1px
+	strong
+		font-weight: 800
+		+xs
+			display: block
+	+lg
+		font-size: 30px
+

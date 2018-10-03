@@ -1,0 +1,23 @@
+{% macro call(props) %}
+	<div class="field {{props.classList}} js-field">
+		{% if props.textarea %}
+			<textarea class="field__textarea js-field-input" placeholder="{{props.textarea}}"></textarea>
+		{% endif %}
+		{% if props.input %}
+			<input type="text" class="field__input js-field-input {{props.input.classList}}" placeholder="{{props.input.placeholder}}">
+		{% endif %}
+		{% if props.select %}
+			<div class="field__select {{props.select.classList}}">
+				<select class="select js-field-select {{props.select.jsClassList}}"  data-placeholder="{{props.select.placeholder}}" style="width: 100%">
+					<option></option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+				</select>
+			</div>
+		{% endif %}
+		{% if props.btn %}
+			<button class="btn {{props.btnClassList}}">{{props.btn}}</button>
+		{% endif %}
+	</div>
+{% endmacro %}

@@ -1,0 +1,64 @@
+.tabs
+	background: $pale-grey
+	padding: 249px 0 121px
+	+lg
+		padding: 100px 0
+	+sm
+		padding: 110px 0 50px
+	&__content
+		display: none
+		opacity: 0
+		visibility: hidden
+		&.is-active
+			display: block
+			opacity: 1
+			visibility: visible
+	&__controls
+		padding-top: 114px
+		font-size: 0
+		max-width: 470px
+		float: right
+		+lg
+			padding-top: 0
+		+sm
+			max-width: 100%
+			margin-bottom: 20px
+	&__button
+		font-family: 'Nunito Sans', sans-serif
+		position: relative
+		background: transparent
+		text-align: left
+		padding: 31px 30px 26px 74px
+		border-radius: 12px
+		+md
+			padding: 15px 15px 10px 50px
+		&.is-active
+			background: $white
+			box-shadow: 0 6px 12px 0 rgba(32, 33, 39, 0.08)
+	&__title
+		display: block
+		margin-bottom: 7px
+		+f(16px, 300, 1.25)
+		strong
+			font-weight: 800
+	&__label
+		display: block
+		color: $slate-grey
+		+f(14px, null, 1.786)
+	&__icon
+		font-size: 24px
+		position: absolute
+		top: 31px
+		left: 30px
+		+md
+			left: 15px
+			top: 16px
+	&__reload
+		fill: $bright-sky-blue
+	&__inbox
+		stroke: $apricot
+		font-size: 19px
+	&__clock
+		fill: $aqua-marine
+	&__tablet
+		margin: 0 auto

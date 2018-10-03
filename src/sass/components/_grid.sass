@@ -1,0 +1,33 @@
+.grid
+	&_inline
+		font-size: 0
+		.grid__col
+			float: none
+	&__row
+		margin: 0 -15px
+		+clr
+	&__col
+		float: left
+		padding: 0 15px
+		&_right
+			float: right
+		&_100
+			width: 100%
+		&_50
+			width: 50%
+		&_33
+			width: 33.33%
+		&_16
+			width: 16.66%
+		&_md
+			&-100
+				+md
+					width: 100%
+		&_sm
+			&-100
+				+sm
+					width: 100%
+		&_xsm
+			&-100
+				+xsm
+					width: 100%

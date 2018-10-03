@@ -1,0 +1,37 @@
+// header
+.header
+	position: absolute
+	left: 0
+	top: 0
+	right: 0
+	padding-top: 25px
+	&__btn
+		margin-left: 15px
+		text-transform: uppercase
+	&__wrapper
+		float: right
+		padding-right: 46px
+		+sm
+			float: none
+			opacity: 0
+			visibility: hidden
+			z-index: 1111
+			padding: 0
+			position: fixed
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			background-color: #000
+			overflow: auto
+			min-width: 320px
+			text-align: center
+			padding: 50px 0
+			background-image: url('../img/bg-preview.png')
+			transition: opacity .3s, visibility .3s
+			+cover
+			&.is-open
+				opacity: 1
+				visibility: visible
+	&__logo
+		padding-top: 5px

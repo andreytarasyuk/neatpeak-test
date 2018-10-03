@@ -1,0 +1,43 @@
+.btn
+	display: inline-block
+	vertical-align: top
+	white-space: nowrap
+	border-radius: 6px
+	background-color: $white
+	color: $charcoal-grey
+	text-transform: capitalize
+	letter-spacing: 1px
+	box-shadow: 0 6px 15px 0 rgba($charcoal-grey, .08)
+	padding: 14px 16px 13px
+	+f(17px, 700, 1.353)
+	transition: box-shadow .3s ease-in-out
+	&:hover
+		box-shadow: 0 0 20px 0 rgba($charcoal-grey, .4)
+	+xs
+		font-size: 16px
+	&_long
+		min-width: 170px
+		text-align: center
+		+xs
+			min-width: 140px
+	&_sm
+		+f(14px, null, 1.358)
+		padding: 11px 20px 10px
+		+xs
+			font-size: 14px
+	&_block
+		width: 100%
+		display: block
+	&_orange
+		color: $white
+		background: $canary-yellow
+		+g(135deg, $salmon, $canary-yellow)
+	&_blue
+		color: $white
+		background: $purpley
+		+g(135deg, $purpley, $bright-sky-blue)
+		padding-left: 43px
+		padding-right: 43px
+	&_green
+		color: $white
+		+g(135deg, $torquoise-blue, $aqua-marine)

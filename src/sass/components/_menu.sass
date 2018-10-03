@@ -1,0 +1,25 @@
+.menu
+	display: inline-block
+	vertical-align: top
+	font-size: 0
+	padding-top: 10px
+	+sm
+		display: block
+		padding: 0 0 20px
+	&__item
+		display: inline-block
+		vertical-align: top
+		padding: 0 15px
+		+sm
+			padding: 0
+			display: block
+	&__control
+		display: inline-block
+		color: $white
+		+f(15px, null, 1.34)
+		transition: color .3s linear
+		+sm
+			font-size: 22px
+			line-height: 60px
+		&:hover
+			color: $charcoal-grey

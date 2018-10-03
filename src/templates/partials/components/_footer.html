@@ -1,0 +1,26 @@
+<!-- begin footer -->
+<footer class="footer">
+	<div class="inner">
+		<a href="#" class="logo footer__logo">AppStarter</a>
+
+		<!-- begin social -->
+		<ul class="social footer__social">
+			{% for item in [ 'twitter', 'facebook', 'instagram' ] %}
+				<li class="social__item">
+					<a href="#" class="social__link">
+						{{mixins.icon(item, 'social__icon social__' + item)}}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<!-- end social -->
+
+		<div class="footer__copyright">
+			Created with
+			{{mixins.icon('heart', 'footer__copyright-icon')}}
+			by <strong>Sergey Azovskiy</strong>
+			<span>© AppStarter, 2017</span>
+		</div>
+	</div>
+</footer>
+<!-- end footer -->

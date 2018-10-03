@@ -1,0 +1,29 @@
+.tablet
+	position: relative
+	overflow: hidden
+	width: 470px
+	height: 708px
+	padding: 65px 18px
+	border-radius: 55px
+	box-shadow: 0 3px 6px 0 rgba($charcoal-grey, .06)
+	background-image: url('../img/tablet.png')
+	+cover
+	+lg
+		width: 320px
+		height: 482px
+		padding: 44px 12px
+		border-radius: 35px
+	+xs
+		width: 290px
+		height: 436px
+		padding: 39px 10px
+	&__content
+		width: 100%
+		height: 100%
+		+cover
+	&_sm
+		width: 405px
+		height: 610px
+		padding: 56px 15px
+		border-radius: 40px
+		box-shadow: 0 -2px 6px 0 ($charcoal-grey, .06)

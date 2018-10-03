@@ -1,0 +1,23 @@
+{% set watch = {
+	title: '<strong>Watch</strong> video tour',
+	label: 'This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her.',
+	icon: 'play'
+} %}
+
+<!-- begin watch -->
+<div class="watch">
+	<div class="inner">
+		<div class="watch__wrapper">
+			<h2 class="title watch__title">{{watch.title | safe}}</h2>
+			<div class="watch__label">{{watch.label}}</div>
+			<button class="watch__control play">
+				<span class="play__wrapper">
+					<span class="play__icon">
+						{{mixins.icon('play', 'play__icon-in')}}
+					</span>
+				</span>
+			</button>
+		</div>
+	</div>
+</div>
+<!-- end watch -->

@@ -1,0 +1,29 @@
+.watch
+	position: relative
+	padding: 113px 0 129px
+	+g(135deg, $purpley, $bright-sky-blue)
+	+cover
+	+lg
+		padding: 80px 0
+	+sm
+		padding: 50px 0
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		background: url('../img/bg-watch.png')
+		opacity: .15
+	&__title
+		margin-bottom: 17px
+	&__control
+		margin: 0 auto
+	&__label
+		color: $white
+		margin-bottom: 21px
+	&__wrapper
+		max-width: 570px
+		margin: 0 auto
+		text-align: center

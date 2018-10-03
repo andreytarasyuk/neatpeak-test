@@ -1,0 +1,46 @@
+{% set about = [
+	{
+		classList: 'box__img',
+		tablet: 'box-1'
+	},
+	{
+		desc: {
+			title: '<strong>Perfect</strong> landing page for your app',
+			label: 'This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking.'
+		}
+	},
+	{
+		desc: {
+			title: '<strong>Style guide</strong> and sample pages included',
+			label: 'This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking.'
+		}
+	},
+	{
+		classList: 'box__img',
+		tablet: 'box-2'
+	}
+] %}
+
+<!-- begin about -->
+<div class="about">
+	<div class="inner">
+		<div class="box">
+			{% for item in about %}
+				<div class="box__item {{item.classList}}">
+					{% if item.desc %}
+						<div class="box__description">
+							<h2 class="title box__title">{{item.desc.title | safe}}</h2>
+							<p class="box__label">{{item.desc.label}}</p>
+						</div>
+					{% endif %}
+					{% if item.tablet %}
+						<div class="tablet tablet_sm box__tablet">
+							<div class="tablet__content" style="background-image: url(img/{{item.tablet}}.png)"></div>
+						</div>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- end about -->

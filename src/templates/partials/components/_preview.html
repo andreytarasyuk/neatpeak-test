@@ -1,0 +1,56 @@
+{% set preview = {
+	grid: [
+		{
+			classList: 'grid__col_50 grid__col_sm-100',
+			intro: {
+				title: '<strong>AppStarter.</strong> Best landing page for&nbsp;web and mobile apps ',
+				img: 'app'
+			}
+		},
+		{
+			classList: 'grid__col_50 grid__col_sm-100',
+			tablet: {
+				classList: 'preview__tablet',
+				img: 'content-1'
+			}
+		}
+	]
+} %}
+
+<!-- begin preview -->
+<div class="preview">
+	<div class="inner">
+		<div class="grid">
+			<div class="grid__row">
+				{% for item in preview.grid %}
+
+					<div class="grid__col {{item.classList}}">
+
+						{% if item.intro %}
+							<!-- begin intro -->
+							<div class="intro">
+								<div class="intro__icon">
+									<img src="img/{{item.intro.img}}.png" class="intro__icon-in" alt="img">
+								</div>
+								<h2 class="title intro__title">{{item.intro.title | safe}}</h2>
+								<div class="intro__controls">
+									<a href="#" class="btn btn_orange intro__control">Download Now</a>
+									<a href="#" class="btn intro__control">Watch Video</a>
+								</div>
+							</div>
+							<!-- end intro -->
+						{% endif %}
+						{% if item.tablet %}
+							<!-- begin tablet -->
+							<div class="tablet {{item.tablet.classList}}">
+								<div class="tablet__content" style="background-image: url('img/{{item.tablet.img}}.png')"></div>
+							</div>
+							<!-- end tablet -->
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end preview -->

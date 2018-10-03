@@ -1,0 +1,80 @@
+{% set contacts = {
+	title: '<strong>Stay</strong> in touch',
+	label: 'This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.',
+	grid: [
+		{
+			classList: 'grid__col_50 grid__col_xsm-100',
+			fieldOptions: {
+				classList: 'form__field',
+				input: {
+					placeholder: 'Your Name'
+				}
+			}
+		},
+		{
+			classList: 'grid__col_50 grid__col_xsm-100',
+			fieldOptions: {
+				classList: 'form__field',
+				input: {
+					placeholder: 'Email Address'
+				}
+			}
+		},
+		{
+			classList: 'grid__col_50 grid__col_xsm-100',
+			fieldOptions: {
+				classList: 'form__field',
+				select: {
+					placeholder: 'Country'
+				}
+			}
+		},
+		{
+			classList: 'grid__col_50 grid__col_xsm-100',
+			fieldOptions: {
+				classList: 'form__field',
+				select: {
+					placeholder: 'City'
+				}
+			}
+		},
+		{
+			classList: 'grid__col_100',
+			fieldOptions: {
+				classList: 'form__field',
+				textarea: 'Message...'
+			}
+		},
+		{
+			classList: 'grid__col_100 form__center',
+			btn: 'Send Message'
+		}
+	]
+} %}
+
+<!-- begin contacts -->
+<div class="contacts">
+	<div class="inner">
+		<div class="contacts__wrapper">
+			<h2 class="title contacts__title">{{contacts.title | safe}}</h2>
+			<div class="contacts__label">{{contacts.label}}</div>
+		</div>
+		<form action="/" class="form contacts__form">
+			<div class="grid">
+				<div class="grid__row form__row">
+					{% for item in contacts.grid %}
+						<div class="grid__col form__col {{item.classList}}">
+							{% if item.fieldOptions %}
+								{{field.call(item.fieldOptions)}}
+							{% endif %}
+							{% if item.btn %}
+								<a href="#" class="btn btn_orange form__btn">{{item.btn}}</a>
+							{% endif %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- end contacts -->

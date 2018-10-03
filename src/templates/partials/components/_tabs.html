@@ -1,0 +1,77 @@
+{% set tabs = {
+	grid: [
+		{
+			classList: 'grid__col_right grid__col_50 grid__col_sm-100',
+			controls: [
+				{
+					icon: 'reload',
+					title: '<strong>Sync</strong> across all devices',
+					label: 'This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.'
+				},
+				{
+					icon: 'inbox',
+					classList: 'is-active',
+					title: '<strong>All emails</strong> in one place',
+					label: 'This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.'
+				},
+				{
+					icon: 'clock',
+					title: '<strong>Track</strong> your time',
+					label: 'This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.'
+				}
+			]
+		},
+		{
+			classList: 'grid__col_50 grid__col_sm-100',
+			tablets: [
+				{
+					url: 'content-1'
+				},
+				{
+					classList: 'is-active',
+					url: 'content-2'
+				},
+				{
+					url: 'content-1'
+				}
+			]
+		}
+	]
+} %}
+
+<!-- begin tabs -->
+<div class="tabs js-tabs">
+	<div class="inner">
+		<div class="grid">
+			<div class="grid__row">
+				{% for item in tabs.grid %}
+					<div class="grid__col {{item.classList}}">
+						{% if item.controls %}
+							<div class="tabs__controls">
+								{% for item in item.controls %}
+									<button class="tabs__button {{item.classList}}" data-tab="{{loop.index}}">
+										{{mixins.icon(item.icon, 'tabs__icon tabs__' + item.icon)}}
+										<span class="tabs__title">{{item.title | safe}}</span>
+										<span class="tabs__label">{{item.label}}</span>
+									</button>
+								{% endfor %}
+							</div>
+						{% endif %}
+						{% if item.tablets %}
+							<div class="tabs__container">
+								{% for item in item.tablets %}
+									<div class="tabs__content {{item.classList}}" data-content="{{loop.index}}">
+										<div class="tablet tabs__tablet">
+											<div class="tablet__content" style="background-image: url('../img/{{item.url}}.png')"></div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end tabs -->

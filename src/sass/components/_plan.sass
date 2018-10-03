@@ -1,0 +1,47 @@
+.plan
+	padding: 140px 0
+	+lg
+		padding: 100px 0
+	+sm
+		padding: 50px 0
+	+xs
+		text-align: center
+	&__info
+		width: 370px
+		+lg
+			width: 350px
+		+md
+			width: 100%
+			padding-bottom: 50px
+	&__title
+		color: $charcoal-grey
+		margin-bottom: 17px
+	&__label
+		color: $slate-grey
+		margin-bottom: 15px
+	&__field
+		display: inline-block
+		vertical-align
+	&__choice
+		font-size: 0
+		margin-bottom: 18px
+		+clr
+		&-label
+			display: inline-block
+			vertical-align: top
+			color: $slate-grey
+			padding: 5px 12px 0 0
+			+f(16px, 400, 1.875)
+			+xs
+				font-size: 15px
+				padding-top: 6px
+	&__inner
+		display: flex
+		+md
+			flex-wrap: wrap
+	&__carts
+		flex-grow: 1
+		font-size: 0
+		padding-left: 130px
+		+lg
+			padding-left: 0

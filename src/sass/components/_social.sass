@@ -1,0 +1,25 @@
+.social
+	font-size: 0
+	border: 1px solid $silver
+	border-radius: 6px
+	&__item
+		display: inline-block
+		vertical-align: top
+		&:last-child
+			.social__link
+				border-right: none
+	&__link
+		display: inline-block
+		width: 40px
+		height: 38px
+		border-right: 1px solid $silver
+		color: $silver-two
+		transition: color .3s linear
+		+vertical
+		&:hover
+			color: $bright-sky-blue
+	&__icon
+		display: inline-block
+		vertical-align: middle
+		fill: currentColor
+		font-size: 16px
